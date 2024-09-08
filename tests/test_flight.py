@@ -22,8 +22,8 @@ def open_expedia_website(flight_page):
     flight_page.driver.get(flight_page.url)
     flight_page.driver.maximize_window()
 
-@when('the user selects "Flights" and chooses a one-way trip from "<source>" to "<dest>"')
-def search_flights(flight_page, source, dest):
+@when('the user selects "Flights" and chooses a one-way trip from "Bangalore" to "Delhi"')
+def search_flights(flight_page, source="Bengaluru", dest="Delhi"):
     flight_page.search_flight(source, dest, traveller=flight_page.no_of_people)
 
 @when('the user sorts the results by "Duration (shortest)"')
