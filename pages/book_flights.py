@@ -7,7 +7,7 @@ import time
 
 class FlightPage(CommonOps,FlightBookingElements):
     def __init__(self,driver,url,no_of_people):
-        super().__init__()
+        super().__init__(driver)
         self.driver=driver
         self.url = url
         self.no_of_people = no_of_people

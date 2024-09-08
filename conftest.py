@@ -18,7 +18,6 @@ def driver(request):
     # Initialize WebDriver
     serv = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=serv)
-    driver.maximize_window()
 
     # Return driver and options for tests
     yield driver, booking_type, no_of_people, url
