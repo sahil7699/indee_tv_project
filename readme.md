@@ -27,7 +27,7 @@ This project automates the booking of flights and hotels using Selenium with Pyt
 
 - **Clone the Repository**
     ```sh
-    git clone <repository-url>
+    git clone https://github.com/sahil7699/indee_tv_project.git
     cd <repository-directory>
     ```
 - **Install Dependencies**
