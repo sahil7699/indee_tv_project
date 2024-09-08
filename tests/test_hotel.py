@@ -8,15 +8,15 @@ scenarios('features/hotel_booking.feature')
 # Fixture for the HotelPage
 @pytest.fixture
 def hotel_page(driver):
-    driver, booking_type, no_of_people, url = driver
-    return HotelPage(driver, url)
+    driver_instance, booking_type, no_of_people, url = driver
+    return HotelPage(driver_instance, url, no_of_people)
 
 # Step Definitions
+
 @pytest.mark.skipif(
-    pytest.config.getoption("--booking-type") != "hotel",
+    lambda booking_type: booking_type != "hotel",
     reason="Skipping hotel tests as booking-type is not hotel"
 )
-
 @given('the user opens the Expedia website')
 def open_expedia_website(hotel_page):
     hotel_page.open_url(hotel_page.url)

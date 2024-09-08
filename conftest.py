@@ -23,3 +23,7 @@ def driver(request):
     # Return driver and options for tests
     yield driver, booking_type, no_of_people, url
     driver.quit()
+
+@pytest.fixture
+def booking_type(request):
+    return request.config.getoption("--booking-type")

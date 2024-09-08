@@ -8,15 +8,15 @@ scenarios('features/flight_booking.feature')
 # Fixture for the FlightPage
 @pytest.fixture
 def flight_page(driver):
-    driver, booking_type, no_of_people, url = driver
-    return FlightPage(driver)
+    driver_instance, booking_type, no_of_people, url = driver
+    return FlightPage(driver_instance, url, no_of_people)
 
 # Step Definitions
+
 @pytest.mark.skipif(
-    pytest.config.getoption("--booking-type") != "flight",
+    lambda booking_type: booking_type != "flight",
     reason="Skipping flight tests as booking-type is not flight"
 )
-
 @given('the user opens the Expedia website')
 def open_expedia_website(flight_page):
     flight_page.driver.get(flight_page.url)

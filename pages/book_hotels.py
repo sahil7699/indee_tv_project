@@ -2,7 +2,9 @@ from utils.helper import CommonOps
 from utils.elements import HotelBookingElements
 import copy,time,json
 class HotelPage(CommonOps,HotelBookingElements):
-    
+    def __init__(self,driver,url,no_of_people):
+        super().__init__()
+        
     def search_hotel(self,dest,guests):
         
         self.click(self.dest_btn)
