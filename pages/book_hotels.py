@@ -4,6 +4,9 @@ import copy,time,json
 class HotelPage(CommonOps,HotelBookingElements):
     def __init__(self,driver,url,no_of_people):
         super().__init__()
+        self.driver=driver
+        self.url = url
+        self.no_of_people = no_of_people
         
     def search_hotel(self,dest,guests):
         
